@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+
+        var options = {
+          sky: true
+        };
+
+        var earth = new WE.map('earth_div', options);
+        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+        WE.tileLayer('http://data.nhm.ac.uk/database/datastore_default/table/05ff2255-c38a-40c9-b657-4ccb55ab2feb/{z}/{x}/{y}.png').addTo(earth);
+      }
+    </script>
+
+    <link rel='stylesheet' href='style.css'/>
+
+  </head>
+  <body onload="initialize()">
+    <h1>NHM Specimen records</h1>
+    <div id="earth_div"></div>
+  </body>
+</html>

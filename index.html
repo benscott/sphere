@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+
+        var options = {
+          sky: true
+        };
+
+        var earth = new WE.map('earth_div', options);
+        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+        WE.tileLayer('http://api.gbif.org/v1/map/density/tile?x={x}&y={y}&z={z}').addTo(earth);
+      }
+    </script>
+
+    <link rel='stylesheet' href='style.css'/>
+
+  </head>
+  <body onload="initialize()">
+    <h1>GBIF Occurrence records</h1>
+    <div id="earth_div"></div>
+  </body>
+</html>
